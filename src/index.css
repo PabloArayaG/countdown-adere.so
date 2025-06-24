@@ -19,6 +19,26 @@
 }
 
 @layer components {
+  .texto-degradado {
+    background: linear-gradient(90deg, #E6E6FA, #B8C5FF, #FFFFFF, #C8D4FF, #E6E6FA);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: moveGradient 5s ease infinite;
+    display: block;
+  }
+  
+  .texto-pronto {
+    background: linear-gradient(90deg, #B8C5FF, #FFFFFF, #E6E6FA, #B8C5FF);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: moveGradient 3s ease infinite;
+    display: block;
+  }
+  
   .gradient-bg {
     background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
   }
@@ -71,4 +91,17 @@
   width: 100% !important;
   border: none !important;
   transition: none !important;
+}
+
+/* Animación para el texto degradado */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

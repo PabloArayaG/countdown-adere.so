@@ -6,11 +6,12 @@ function App() {
     <div className="min-h-screen hero-gradient font-poppins relative">
       {/* Background Image Overlay */}
       <div 
-        className="absolute inset-0 bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/Degradados-16.png')",
           backgroundPosition: 'center center',
           backgroundSize: '200% auto',
+          opacity: 0.45,
           zIndex: 0
         }}
       ></div>
@@ -20,33 +21,35 @@ function App() {
         <div className="max-w-6xl mx-auto">
           
           {/* Hero Title */}
-          <section className="text-center mb-12 md:mb-16">
+          <section className="text-center mb-8 md:mb-12">
             <div className="mb-6 md:mb-8">
               <img 
                 src="/Adereso_Blanco.png" 
                 alt="Adereso AI" 
-                className="mx-auto h-10 md:h-16 w-auto"
+                className="mx-auto h-10 md:h-12 lg:h-16 w-auto"
               />
             </div>
-            <div className="mb-4 md:mb-6">
+            <div className="mb-4 md:mb-6 flex justify-center">
               <img 
                 src="/GenIA-logo.png" 
                 alt="GenIA Logo" 
-                className="mx-auto h-10 md:h-16 lg:h-20 w-auto mb-3 md:mb-4"
+                className="h-10 md:h-12 lg:h-16 xl:h-20 w-auto"
               />
             </div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-tight px-2">
-              ¡El futuro del <span style={{color: '#B37DFA'}}>CX</span> pronto!
-            </h1>
+            <div className="mb-8 md:mb-10 px-2 text-center">
+              <h1 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-tight text-white block">
+                ¡El futuro del CX pronto!
+              </h1>
+            </div>
           </section>
 
           {/* Countdown Section */}
-          <section className="mb-12 md:mb-16">
+          <section className="mb-8 md:mb-12">
             <Countdown />
           </section>
 
           {/* Subtitle */}
-          <section className="text-center mb-10 md:mb-12">
+          <section className="text-center mb-8 md:mb-12">
             <p className="text-lg md:text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-4">
               Estamos trabajando en algo revolucionario.
             </p>
