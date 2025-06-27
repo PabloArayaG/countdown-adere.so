@@ -23,11 +23,18 @@ function App() {
           {/* Hero Title */}
           <section className="text-center mb-8 md:mb-12">
             <div className="mb-6 md:mb-8">
-              <img 
-                src="/Adereso_Blanco.png" 
-                alt="Adereso AI" 
-                className="mx-auto h-10 md:h-12 lg:h-16 w-auto"
-              />
+              <a 
+                href="https://www.adereso.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity duration-200"
+              >
+                <img 
+                  src="/Adereso_Blanco.png" 
+                  alt="Adereso AI" 
+                  className="mx-auto h-7 md:h-8 lg:h-11 w-auto"
+                />
+              </a>
             </div>
             <div className="mb-4 md:mb-6 flex justify-center">
               <img 
@@ -56,16 +63,14 @@ function App() {
             <p className="text-lg md:text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mt-2 px-4">
               Únete a nuestra lista de espera y sé de los primeros en experimentar GenIA.
             </p>
-            <p className="text-white/60 text-xs md:text-sm mt-4 md:mt-6 px-4">
-              * Fecha estimada de lanzamiento: 31 de Julio, 2025
+            <p className="text-white/60 text-xs md:text-sm mt-4 md:mt-6 px-4 italic">
+              Fecha estimada de lanzamiento: 9 de Julio, 2025
             </p>
           </section>
 
           {/* Form Section */}
           <section className="flex justify-center mt-12 md:mt-16">
-            <div className="w-full max-w-md px-4">
-              <div className="text-center mb-8">
-              </div>
+            <div className="w-full max-w-4xl px-4">
               <Formulario />
             </div>
           </section>

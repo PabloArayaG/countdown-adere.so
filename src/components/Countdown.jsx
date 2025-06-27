@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import './countdown.css'
 
 const Countdown = () => {
-  // Fecha objetivo: 31 de julio de 2025 a las 23:59:59
-  const targetDate = new Date('2025-07-31T23:59:59').getTime()
+  // Fecha objetivo: 9 de julio de 2025 a las 8:30 AM hora chilena
+  const targetDate = new Date('2025-07-09T08:30:00-03:00').getTime()
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
