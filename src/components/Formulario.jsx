@@ -18,7 +18,9 @@ const Formulario = () => {
             type="text"
             placeholder="Nombre"
             className="input-field"
-            autoComplete="off"
+            autoComplete="given-name"
+            inputMode="text"
+            name="firstName"
           />
         </div>
         <div className="input-group">
@@ -27,7 +29,9 @@ const Formulario = () => {
             type="text"
             placeholder="Apellido"
             className="input-field"
-            autoComplete="off"
+            autoComplete="family-name"
+            inputMode="text"
+            name="lastName"
           />
         </div>
         <div className="input-group">
@@ -36,10 +40,14 @@ const Formulario = () => {
             type="email"
             placeholder="Correo electrónico"
             className="input-field"
-            autoComplete="off"
+            autoComplete="email"
+            inputMode="email"
+            name="email"
           />
         </div>
-        <button type="submit" className="form-button">Quiero conocer GenIA</button>
+        <button type="submit" className="form-button" aria-label="Enviar formulario para unirse a la lista de espera">
+          Quiero conocer GenIA
+        </button>
       </form>
     </div>
   );
