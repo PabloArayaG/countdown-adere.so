@@ -4,11 +4,11 @@
   /* Efecto glassmorphism base con degradé animado */
   backdrop-filter: blur(20px) saturate(180%);
   background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(139, 168, 255, 0.15) 25%,
-    rgba(86, 29, 206, 0.1) 50%,
-    rgba(184, 186, 188, 0.12) 75%,
-    rgba(255, 255, 255, 0.18) 100%
+    rgba(19, 20, 21, 0.45) 0%,
+    rgba(35, 37, 40, 0.35) 25%,
+    rgba(25, 27, 30, 0.40) 50%,
+    rgba(30, 32, 35, 0.30) 75%,
+    rgba(19, 20, 21, 0.45) 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
