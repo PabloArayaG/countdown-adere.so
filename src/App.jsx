@@ -6,11 +6,10 @@ function App() {
     <div className="min-h-screen hero-gradient font-poppins relative">
       {/* Background Image Overlay */}
       <div 
-        className="absolute inset-0 bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat bg-overlay-responsive"
         style={{
           backgroundImage: "url('/Degradados-16.png')",
           backgroundPosition: 'center center',
-          backgroundSize: '200% auto',
           opacity: 0.30,
           zIndex: 0
         }}
