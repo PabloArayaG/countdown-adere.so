@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Formulario.css';
 import { FaUser, FaEnvelope } from 'react-icons/fa';
+import { db } from '../firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const Formulario = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      await addDoc(collection(db, 'leads'), {
+        nombre: formData.firstName,
+        apellido: formData.lastName,
+        correo: formData.email,
+        timestamp: serverTimestamp()
+      });
+
+      setMessage('¡Gracias! Te hemos agregado a la lista de espera.');
+      setFormData({ firstName: '', lastName: '', email: '' });
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('Hubo un error. Por favor, intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="form-container">
       <div className="form-header">
@@ -11,7 +51,12 @@ const Formulario = () => {
           Deja tus datos y te avisaremos cuando GenIA esté disponible.
         </p>
       </div>
-      <form className="form-horizontal">
+      {message && (
+        <div className={`form-message ${message.includes('Gracias') ? 'success' : 'error'}`}>
+          {message}
+        </div>
+      )}
+      <form className="form-horizontal" onSubmit={handleSubmit}>
         <div className="input-group">
           <span className="input-icon"><FaUser /></span>
           <input
@@ -21,6 +66,9 @@ const Formulario = () => {
             autoComplete="given-name"
             inputMode="text"
             name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
           />
         </div>
         <div className="input-group">
@@ -32,6 +80,9 @@ const Formulario = () => {
             autoComplete="family-name"
             inputMode="text"
             name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
           />
         </div>
         <div className="input-group">
@@ -43,10 +94,18 @@ const Formulario = () => {
             autoComplete="email"
             inputMode="email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
           />
         </div>
-        <button type="submit" className="form-button" aria-label="Enviar formulario para unirse a la lista de espera">
-          Quiero conocer GenIA
+        <button 
+          type="submit" 
+          className="form-button" 
+          disabled={isSubmitting}
+          aria-label="Enviar formulario para unirse a la lista de espera"
+        >
+          {isSubmitting ? 'Enviando...' : 'Quiero conocer GenIA'}
         </button>
       </form>
     </div>
