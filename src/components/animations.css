@@ -1,0 +1,113 @@
+/* Animaciones para Landing Page GenIA */
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUpText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CLASES DE ANIMACIÓN */
+
+/* 1. Container principal: fadeIn básico (0.6s, delay 0s) */
+.animate-container {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 0s forwards;
+}
+
+/* 2. Logo/imagen: fadeIn + scale de 0.9 a 1.0 (0.6s, delay 0.2s) */
+.animate-logo {
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out 0.2s forwards;
+}
+
+/* 3. Contenedor de contenido: slideUp desde translateY(30px) (0.8s, delay 0.4s) */
+.animate-content {
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out 0.4s forwards;
+}
+
+/* 4. Textos principales: slideUp desde translateY(20px) con delays de 0.6s y 0.7s */
+.animate-text-1 {
+  opacity: 0;
+  animation: slideInUpText 0.6s ease-out 0.6s forwards;
+}
+
+.animate-text-2 {
+  opacity: 0;
+  animation: slideInUpText 0.6s ease-out 0.7s forwards;
+}
+
+/* 5. Botones/elementos de acción: slideUp desde translateY(20px) con delays incrementales */
+.animate-button-1 {
+  opacity: 0;
+  animation: buttonSlideIn 0.6s ease-out 0.8s forwards;
+}
+
+.animate-button-2 {
+  opacity: 0;
+  animation: buttonSlideIn 0.6s ease-out 1.0s forwards;
+}
+
+.animate-button-3 {
+  opacity: 0;
+  animation: buttonSlideIn 0.6s ease-out 1.2s forwards;
+}
+
+/* Clases adicionales para elementos específicos */
+.animate-subtitle {
+  opacity: 0;
+  animation: slideInUpText 0.6s ease-out 0.9s forwards;
+}
+
+.animate-form {
+  opacity: 0;
+  animation: buttonSlideIn 0.6s ease-out 1.4s forwards;
+} 
