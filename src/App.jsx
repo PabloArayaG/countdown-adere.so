@@ -12,7 +12,8 @@ function App() {
           backgroundImage: "url('/Degradados-16.png')",
           backgroundPosition: 'center center',
           opacity: 0.30,
-          zIndex: 0
+          zIndex: 0,
+          filter: 'blur(10px)'
         }}
       ></div>
       
