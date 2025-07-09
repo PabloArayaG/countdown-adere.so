@@ -1,8 +1,12 @@
 import Countdown from './components/Countdown'
 import Formulario from './components/Formulario'
 import './components/animations.css'
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    window.location.href = 'https://linktree.adereso.ai/';
+  }, []);
   return (
     <div className="min-h-screen hero-gradient font-poppins relative animate-container">
       {/* Background Image Overlay */}
