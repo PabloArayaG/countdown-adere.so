@@ -5,7 +5,12 @@ import { useEffect } from 'react';
 
 function App() {
   useEffect(() => {
-    window.location.href = 'https://linktree.adereso.ai/';
+    const now = new Date();
+    const redirectTime = new Date('2025-07-09T08:00:00-04:00'); // Miércoles 9 de julio, 08:00 AM Chile
+  
+    if (now >= redirectTime) {
+      window.location.href = 'https://linktree.adereso.ai/';
+    }
   }, []);
   return (
     <div className="min-h-screen hero-gradient font-poppins relative animate-container">
